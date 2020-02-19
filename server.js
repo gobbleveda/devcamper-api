@@ -14,6 +14,7 @@ const rateLimit = require('express-rate-limit');
 const hpp = require('hpp');
 const cors = require('cors');
 
+
 // load env variables
 
 dotenv.config({path: './config/config.env'});
@@ -65,7 +66,7 @@ app.use(xss());
 
 const limiter = rateLimit({
     windowMs: 10 * 60 * 1000, // 10 minutes
-    max: 100
+    max: 20000
 });
 
 app.use(limiter);
