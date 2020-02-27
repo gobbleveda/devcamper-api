@@ -106,7 +106,7 @@ app.use(errorHandler);
 
 
 const LOCALPORT = process.env.PORT || 5000;
-const server = app.listen(LOCALPORT, () => {console.log(`Server running in ${process.env.NODE_ENV} mode on port ${LOCALPORT}`.yellow.bold)});
+const server = app.listen(LOCALPORT, () => {console.log(`Aman says server is running in ${process.env.NODE_ENV} mode on port ${LOCALPORT}`.yellow.bold)});
 
 //Handle unhandled promise rejections globally
 
