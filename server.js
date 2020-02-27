@@ -20,7 +20,7 @@ const cors = require('cors');
 
 const  {
     NODE_ENV,
-    PORT,
+    NODEPORT,
     GEOCODER_PROVIDER,
     GEOCODER_API_KEY,
     FILE_UPLOAD_PATH,
@@ -105,7 +105,7 @@ app.use('/api/v1/reviews',reviews);
 app.use(errorHandler);
 
 
-const LOCALPORT = process.env.PORT || 5000;
+const LOCALPORT = process.env.NODEPORT || 5000;
 const server = app.listen(LOCALPORT, () => {console.log(`Aman says server is running in ${process.env.NODE_ENV} mode on port ${LOCALPORT}`.yellow.bold)});
 
 //Handle unhandled promise rejections globally
