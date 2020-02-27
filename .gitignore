@@ -55,6 +55,11 @@ typings/
 # Optional eslint cache
 .eslintcache
 
+.ensime_cache
+.history
+.vscode
+.dockerignore
+
 # Microbundle cache
 .rpt2_cache/
 .rts2_cache_cjs/

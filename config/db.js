@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
 
+const url = `mongodb://${MONGO_USERNAME}:${MONGO_PASSWORD}@${MONGO_HOSTNAME}:${MONGO_PORT}/${MONGO_DB}?authSource=admin`;
+
 const connectDB = async () => {
-    const conn = await mongoose.connect(process.env.MONGO_URI, {
+    const conn = await mongoose.connect(url, {
         useNewUrlParser: true,
         useCreateIndex: true,
         useFindAndModify: false,

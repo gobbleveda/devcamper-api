@@ -16,8 +16,30 @@ const cors = require('cors');
 
 
 // load env variables
+// 2/27/2020 - passing environment variable through docker compose .env file
 
-dotenv.config({path: './config/config.env'});
+const  {
+    NODE_ENV,
+    PORT,
+    GEOCODER_PROVIDER,
+    GEOCODER_API_KEY,
+    FILE_UPLOAD_PATH,
+    MAX_FILE_UPLOAD,
+    MONGO_USERNAME,
+    MONGO_PASSWORD,
+    MONGO_HOSTNAME,
+    MONGO_PORT,
+    MONGO_DB,
+    SMTP_HOST,
+    SMTP_PORT,
+    SMTP_EMAIL,
+    SMTP_PASSWORD,
+    FROM_EMAIL,
+    FROM_NAME
+} = process.env;
+
+
+//  dotenv.config({path: './config/config.env'});
 
 // connect to database
 connectDB();
@@ -66,8 +88,8 @@ app.use(xss());
 
 const limiter = rateLimit({
     windowMs: 10 * 60 * 1000, // 10 minutes
-    max: 20000
-});
+    max: 200000
+})
 
 app.use(limiter);
 

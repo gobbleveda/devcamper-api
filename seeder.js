@@ -4,7 +4,9 @@ const dotenv = require('dotenv');
 const fs = require('fs');
 
 //Load env file
-dotenv.config({path: './config/config.env'});
+//dotenv.config({path: './config/config.env'});
+
+const url = `mongodb://${MONGO_USERNAME}:${MONGO_PASSWORD}@${MONGO_HOSTNAME}:${MONGO_PORT}/${MONGO_DB}?authSource=admin`;
 
 // load the models
 
@@ -15,7 +17,7 @@ const Review = require('./models/Review');
 
 // connect to MongoDB
 
-mongoose.connect(process.env.MONGO_URI, {
+mongoose.connect(url , {
     useNewUrlParser: true,
     useCreateIndex: true,
     useFindAndModify: false,
